@@ -1,2 +1,4 @@
 # Tarea2
-Tarea 2 de Programación II
+Tarea número 2 de Programación II:
+Matías Alonso Muñoz Sotomayor
+Constanza Fabiola Cristinich Ananías
