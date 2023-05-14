@@ -7,7 +7,7 @@ import java.awt.*;
  *representa modelo para Bebida
  */
 public abstract class Bebida extends Producto{
-    private int serie;
+    int serie;
     protected int x,y;
     /**
      * Constructor de Producto

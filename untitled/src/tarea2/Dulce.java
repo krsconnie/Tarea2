@@ -7,7 +7,7 @@ import java.awt.*;
  * representa modelo para Dulce
  */
 public abstract class Dulce extends Producto{
-    private int serie;
+    protected int serie;
     protected int x,y;
     public Dulce(int s) {
         super(s);
