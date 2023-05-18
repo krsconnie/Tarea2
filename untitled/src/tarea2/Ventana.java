@@ -1,10 +1,21 @@
 package tarea2;
-import java.awt.BorderLayout;
 import javax.swing.JFrame;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-
 public class Ventana extends JFrame {
-    public Ventana(String s) {
 
+    private PanelPrincipal panelPrincipal;
+
+    public Ventana(String s) {
+        crearVentana();
+        panelPrincipal = new PanelPrincipal(this);
+
+    }
+
+    private void crearVentana(){
+        this.setTitle("Tarea 2");
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setSize(1280,720);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 }
