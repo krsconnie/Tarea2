@@ -20,7 +20,7 @@ public class Comprador {
      * @param CualProducto que escoge que tipo de producto ( que tipo de Bebida o Dulce)
      * @param maquina el expendedor en el que se compra
      */
-    public void Comprador(Moneda m, int CualProducto, Expendedor maquina) {
+    public void Comprador(Moneda m, int CualProducto, Expendedor maquina) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         vuelto = 0;
 
         Producto paquete;
