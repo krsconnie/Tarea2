@@ -20,7 +20,7 @@ public class Comprador {
      * @param CualProducto que escoge que tipo de producto ( que tipo de Bebida o Dulce)
      * @param maquina el expendedor en el que se compra
      */
-    pub(Moneda m, int CualProducto, Expendedor maquina) {
+    public void Comprador(Moneda m, int CualProducto, Expendedor maquina) {
         vuelto = 0;
 
         Producto paquete;
