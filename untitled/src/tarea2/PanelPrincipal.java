@@ -1,22 +1,23 @@
 package tarea2;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.Dimension;
-import java.awt.Color;
-import java.awt.Image;
+import javax.swing.*;
+import java.awt.*;
 import java.net.URL;
 
 
 public class PanelPrincipal{
     JPanel principal = new JPanel();
-    public Image imagenFondo;
-    public URL fondo;
+    private Image imagenFondo;
 
      public void PanelPrincipal(){
      }
      public void fondoPanel(){
-        fondo = this.getClass().getResource("/Tarea2/recursos/fondo.jpg");
-        
+
+        imagenFondo = new ImageIcon("fondo.jpg").getImage();
+
      }
+     public void pintarFondo(Graphics g){
+         g.drawImage(imagenFondo,0,0, 1280, 720,principal);
+     }
+
 
 }
