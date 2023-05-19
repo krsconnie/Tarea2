@@ -8,6 +8,7 @@ public class Ventana extends JFrame {
     /**Constructor de Ventana*/
     public Ventana() {
         crearVentana();
+        llenarVentana();
         panelPrincipal = new PanelPrincipal();
 
     }
@@ -20,4 +21,9 @@ public class Ventana extends JFrame {
         this.setVisible(true);//Le da la propiedad de ser visible
         this.setLocationRelativeTo(null);//Hace que la ventana aparezca en el centro de la pantalla
     }
+    /**Método que agrega el panel principal a la ventana creada*/
+    private void llenarVentana(){
+        this.getContentPane().add(panelPrincipal.principal);//Se agrega el panel a la ventana
+    }
+
 }
