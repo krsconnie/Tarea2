@@ -1,45 +1,39 @@
 package tarea2.grafica;
 
 import tarea2.Logica.*;
-import tarea2.Logica.Expendedor;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PanelComprador extends JPanel {
 
-    private final Comprador comprador;
-    private final tarea2.Logica.Expendedor maquina;
+    private final Expendedor maquina;
+    private final JButton comprarButton;
 
     public PanelComprador(Expendedor maquina) {
         this.maquina = maquina;
 
         this.setBackground(Color.WHITE);
-        this.addMouseListener(new MouseAdapter() {
+        this.setLayout(new BorderLayout());
+
+        comprarButton = new JButton("Comprar");
+        comprarButton.addActionListener(new ActionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 comprarProducto();
             }
         });
 
-        this.setLayout(new BorderLayout());
-
-        comprador = new Comprador();
-        this.add(comprador, BorderLayout.CENTER);
-    }
-
-    public void setMoneda(Moneda moneda) {
-        comprador.setMoneda(moneda);
-    }
-
-    public void setCualProducto(int cualProducto) {
-        comprador.setCualProducto(cualProducto);
+        this.add(comprarButton, BorderLayout.CENTER);
     }
 
     public void comprarProducto() {
         try {
-            comprador.comprarProducto(maquina);
+            Moneda moneda = maquina.getMoneda();
+            int cual = maquina.getCual();
+            maquina.comprarProducto(moneda,cual);
             repaint();
         } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);

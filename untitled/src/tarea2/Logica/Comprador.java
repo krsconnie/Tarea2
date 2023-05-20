@@ -6,26 +6,22 @@ package tarea2.Logica;
  */
 public class Comprador {
 
-    /**
-     * Declaración de propiedades,
-     * Comprador devolverá un String (que consumió)
-     * y un entero (el vuelto)
-     */
     private String consumir;
     private int vuelto;
+    private Moneda m;
+    private int cualProducto;
+    private Expendedor maquina;
 
-    /**
-     * Constructor de comprador
-     * @param m moneda con la que se comprará
-     * @param CualProducto que escoge que tipo de producto ( que tipo de Bebida o Dulce)
-     * @param maquina el expendedor en el que se compra
-     */
-    public void Comprador(Moneda m, int CualProducto, Expendedor maquina) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+    public Comprador() {
         vuelto = 0;
+    }
 
-        Producto paquete;
+    public void comprarProducto(Moneda m, int cualProducto, Expendedor maquina) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+        this.m = m;
+        this.cualProducto = cualProducto;
+        this.maquina = maquina;
 
-        paquete = maquina.comprarProducto(m,CualProducto);
+        Producto paquete = maquina.comprarProducto(m, cualProducto);
 
         while (true) {
             Moneda devuelve = maquina.getVuelto();
@@ -56,5 +52,20 @@ public class Comprador {
      */
     public String queConsumiste() {
         return consumir;
+    }
+    public void setCualProducto(int cualProducto) {
+        this.cualProducto = cualProducto;
+    }
+
+    public void setMoneda(Moneda m){
+        this.m = m;
+    }
+
+    public Moneda getM() {
+        return m;
+    }
+
+    public int getCualProducto() {
+        return cualProducto;
     }
 }

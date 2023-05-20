@@ -6,7 +6,7 @@ import java.awt.*;
 import javax.swing.*;
 
 /** Un expendedor que tendrá depósitos para cada producto y para el vuelto, cuenta con la interfaz gráfica */
-public class Expendedor extends JPanel {
+public class PanelExpendedor extends JPanel {
 
     public static final int COCA = 1;
     public static final int SPRITE = 2;
@@ -24,7 +24,7 @@ public class Expendedor extends JPanel {
     private Deposito<Moneda100> aux;
     private Deposito<Producto> depCompraExitosa;
 
-    public Expendedor(int n) {
+    public PanelExpendedor() {
         this.depVuelto = new Deposito<>(100);
         this.depMonedas = new Deposito<>(100);
         this.depCoca = new Deposito<>(4);
@@ -34,7 +34,7 @@ public class Expendedor extends JPanel {
         this.aux = new Deposito<>(100);
         this.depCompraExitosa = new Deposito<Producto>(1);
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < 2; i++) {
             depCoca.addItem(new CocaCola());
             depSprite.addItem(new Sprite());
             depSnick.addItem(new Snickers());
@@ -113,14 +113,18 @@ public class Expendedor extends JPanel {
     public void rellenarDepositosVacios() {
         if (depCoca.estaVacio()) {
             depCoca.addItem(new CocaCola());
+            depCoca.addItem(new CocaCola());
         }
         if (depSprite.estaVacio()) {
+            depSprite.addItem(new Sprite());
             depSprite.addItem(new Sprite());
         }
         if (depSnick.estaVacio()) {
             depSnick.addItem(new Snickers());
+            depSnick.addItem(new Snickers());
         }
         if (depSup8.estaVacio()) {
+            depSup8.addItem(new Super8());
             depSup8.addItem(new Super8());
         }
     }
