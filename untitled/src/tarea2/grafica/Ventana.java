@@ -1,7 +1,7 @@
-package tarea2;
-import javax.swing.JFrame;
+package tarea2.grafica;
+import tarea2.grafica.PanelPrincipal;
 
-import java.awt.*;
+import javax.swing.JFrame;
 
 /**Clase Ventana hereda de JFrame, que
  * creara la ventana en donde estará nuestro proyecto*/

@@ -1,15 +1,17 @@
-package tarea2;
+package tarea2.Logica;
+import tarea2.Logica.Dulce;
+
 import java.awt.*;
 /**
  *Subclase de Dulce,
  *representa los Super8
  */
-public class Super8 extends Dulce{
+public class Super8 extends Dulce {
     /**
      *Constructor para los Super8
      *@param s2 int
      */
-    public Super8(int s2){super(s2);}
+    public Super8(){super();}
     /**
      *Se sobreescribe el metodo consumir()
      *@return String "Super8"

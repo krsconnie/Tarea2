@@ -1,4 +1,6 @@
-package tarea2;
+package tarea2.Logica;
+import tarea2.Logica.Bebida;
+
 import java.awt.*;
 
 /**
@@ -10,8 +12,8 @@ public class Sprite extends Bebida {
      *Constructor para los productos Sprite
      *@param s1 int
      */
-    public Sprite(int s1) {
-        super(s1);
+    public Sprite() {
+        super();
     }
     public void paint(Graphics g) {
         g.setColor(Color.green);

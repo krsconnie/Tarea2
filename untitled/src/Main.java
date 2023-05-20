@@ -1,5 +1,5 @@
 
-import tarea2.Ventana;
+import tarea2.grafica.Ventana;
 
 public class Main {
     public static void main(String[] args) {

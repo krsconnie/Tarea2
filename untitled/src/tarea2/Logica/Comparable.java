@@ -1,4 +1,4 @@
-package tarea2;
+package tarea2.Logica;
 /**
  * Interfaz que Compara dos objetos
  */

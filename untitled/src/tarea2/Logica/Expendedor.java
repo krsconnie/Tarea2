@@ -1,4 +1,5 @@
-package tarea2;
+package tarea2.Logica;
+
 /**Un
  * expendedor que tendrá depositos para cada producto
  * y para el vuelto

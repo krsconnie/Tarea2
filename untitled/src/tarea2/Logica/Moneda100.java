@@ -1,5 +1,7 @@
-package tarea2;
-import java.awt.*;
+package tarea2.Logica;
+import tarea2.Logica.Moneda;
+
+
 /**
  Subclase de Moneda,
  representa la moneda de 100 pesos
@@ -23,12 +25,7 @@ public class Moneda100 extends Moneda {
         int valor = super.valor;
         return valor;
     }
-    public void paint(Graphics g) {
-        g.setColor(Color.yellow);
-        g.fillOval(this.x, this.y, 20, 20);
-        g.setColor(Color.black);
-        g.drawString(""+this.serie, this.x+3, this.y+15);
-    }
+
     @Override
     public int compareTo() {
         return 0;

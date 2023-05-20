@@ -1,4 +1,4 @@
-package tarea2;
+package tarea2.grafica;
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;

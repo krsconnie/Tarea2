@@ -1,4 +1,4 @@
-package tarea2;
+package tarea2.Logica;
 /**
  * Se declara Excepción personalizada,
  * cuando el pago es insuficiente

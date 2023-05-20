@@ -1,6 +1,4 @@
-package tarea2;
-import java.awt.*;
-
+package tarea2.Logica;
 /**
  *Super clase "modelo"
  * para las monedas de distinto valor
@@ -8,7 +6,7 @@ import java.awt.*;
 public abstract class Moneda implements Comparable {
     protected int valor;
     protected int serie;
-    protected int x, y;
+    public int x, y;
     /**
      * Constructor de Moneda
      */
@@ -23,11 +21,6 @@ public abstract class Moneda implements Comparable {
     public Moneda getSerie() {
         return this;
     }
-    public void setXY(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-    public abstract void paint(Graphics g);
     /**
      * Método compareTo para comparar
      * objetos de tipo Moneda
@@ -40,5 +33,9 @@ public abstract class Moneda implements Comparable {
         } else {
             return 0;
         }
+    }
+    public void setXY(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }

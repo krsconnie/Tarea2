@@ -1,5 +1,7 @@
-package tarea2;
-import java.awt.*;
+package tarea2.Logica;
+import tarea2.Logica.Moneda;
+
+
 
 /**
  Subclase de Moneda, representa la moneda de 500 pesos
@@ -20,12 +22,6 @@ public class Moneda500 extends Moneda {
     public int getValor() {
         int valor = super.valor;
         return valor;
-    }
-    public void paint(Graphics g) {
-        g.setColor(new Color(255,148,8));
-        g.fillOval(this.x, this.y, 20, 20);
-        g.setColor(Color.black);
-        g.drawString(""+this.serie, this.x+3, this.y+15);
     }
 
     @Override

@@ -1,23 +1,17 @@
-package tarea2;
+package tarea2.Logica;
 
 import java.awt.*;
 
 /**
- *Subclase de Producto,
- *representa modelo para Bebida
+ * Subclase de Producto,
+ * representa modelo para Dulce
  */
-public abstract class Bebida extends Producto{
-    int serie;
+public abstract class Dulce extends Producto {
+    protected int serie;
     protected int x,y;
-    /**
-     * Constructor de Producto
-     * @param s único int
-     */
-
-    public Bebida(int s) {
-        super(s);
+    public Dulce() {
+        super();
     }
-
     public abstract String consumir();
     public int getSerie() {
         int s = serie;

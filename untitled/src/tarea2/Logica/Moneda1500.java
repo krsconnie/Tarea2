@@ -1,12 +1,14 @@
-package tarea2;
-import java.awt.*;
+package tarea2.Logica;
+import tarea2.Logica.Moneda;
+
+
 /**
- * Subclase de Moneda, representa la moneda de 1500
+ * Subclase de Moneda, representa la moneda de 1500 pesos
  */
 public class Moneda1500 extends Moneda {
     /**
-     * Constructor de Moneda1500
-     * le otorga a la variable valor = 1500
+     * Constructor de Moneda1000
+     * le otorga a la variable valor = 1000
      */
     public Moneda1500() {
         super();
@@ -19,12 +21,6 @@ public class Moneda1500 extends Moneda {
     public int getValor() {
         int valor = super.valor;
         return valor;
-    }
-    public void paint(Graphics g) {
-        g.setColor(new Color(38,219,255));
-        g.fillOval(this.x, this.y, 20, 20);
-        g.setColor(Color.black);
-        g.drawString(""+this.serie, this.x+3, this.y+15);
     }
 
     @Override

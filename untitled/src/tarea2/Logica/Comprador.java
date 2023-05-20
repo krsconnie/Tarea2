@@ -1,4 +1,4 @@
-package tarea2;
+package tarea2.Logica;
 
 /**
  * Clase comprador que crea una entidad "comprador" que tendrá una moneda con la que

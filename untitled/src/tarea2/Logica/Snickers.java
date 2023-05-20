@@ -1,15 +1,17 @@
-package tarea2;
+package tarea2.Logica;
+import tarea2.Logica.Dulce;
+
 import java.awt.*;
     /**
      *Subclase de Dulce,
      *representa los Snickers
      */
-    public class Snickers extends Dulce{
+    public class Snickers extends Dulce {
         /**
          *Constructor para Snickers
          *@param s2 int
          */
-        public Snickers(int s2){super(s2);}
+        public Snickers(){super();}
         public void paint(Graphics g) {
             g.setColor(Color.white);
             g.fillRect(this.x, this.y, 10, 38);
