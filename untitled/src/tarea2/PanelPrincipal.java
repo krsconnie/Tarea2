@@ -4,20 +4,40 @@ import java.awt.*;
 import java.net.URL;
 
 
-public class PanelPrincipal{
-    JPanel principal = new JPanel();
+public class PanelPrincipal {
+    private JPanel principal = new JPanel() {
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            pintarFondo(g);
+        }
+    };
     private Image imagenFondo;
 
-     public void PanelPrincipal(){
-     }
-     public void fondoPanel(){
+    public PanelPrincipal() {
+        cargarImagenFondo();
+    }
 
-        imagenFondo = new ImageIcon("fondo.jpg").getImage();
+    private void cargarImagenFondo() {
+        try {
+            URL imageURL = getClass().getResource("fondo.png");
+            if (imageURL != null) {
+                imagenFondo = new ImageIcon(imageURL).getImage();
+            } else {
+                System.err.println("No se pudo cargar la imagen de fondo.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-     }
-     public void pintarFondo(Graphics g){
-         g.drawImage(imagenFondo,0,0, 1280, 720,principal);
-     }
+    private void pintarFondo(Graphics g) {
+        if (imagenFondo != null) {
+            g.drawImage(imagenFondo, 0, 0, principal.getWidth(), principal.getHeight(), principal);
+        }
+    }
 
-
+    public JPanel getPanel() {
+        return principal;
+    }
 }

@@ -1,5 +1,8 @@
 package tarea2;
 import javax.swing.JFrame;
+
+import java.awt.*;
+
 /**Clase Ventana hereda de JFrame, que
  * creara la ventana en donde estará nuestro proyecto*/
 public class Ventana extends JFrame {
@@ -8,8 +11,8 @@ public class Ventana extends JFrame {
     /**Constructor de Ventana*/
     public Ventana() {
         crearVentana();
-        llenarVentana();
         panelPrincipal = new PanelPrincipal();
+        getContentPane().add(panelPrincipal.getPanel());
 
     }
     /**Método crearVentana*/
@@ -20,10 +23,6 @@ public class Ventana extends JFrame {
         this.setSize(1280,720);//El tamaño de la ventana
         this.setVisible(true);//Le da la propiedad de ser visible
         this.setLocationRelativeTo(null);//Hace que la ventana aparezca en el centro de la pantalla
-    }
-    /**Método que agrega el panel principal a la ventana creada*/
-    private void llenarVentana(){
-        this.getContentPane().add(panelPrincipal.principal);//Se agrega el panel a la ventana
     }
 
 }

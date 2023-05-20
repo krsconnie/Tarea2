@@ -102,7 +102,7 @@ public class Expendedor {
             peseta = null;
         } else {
             depVuelto.addItem(peseta);
-            throw new NoHayBebidaException("No hay stock del producto seleccionado.");
+            throw new NoHayProductoException("No hay stock del producto seleccionado.");
         }
         return ret;
     }

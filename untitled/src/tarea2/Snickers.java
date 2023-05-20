@@ -1,7 +1,5 @@
 package tarea2;
 import java.awt.*;
-
-public class Snickers {
     /**
      *Subclase de Dulce,
      *representa los Snickers
@@ -25,4 +23,4 @@ public class Snickers {
         @Override
         public String consumir() {return "Snicker";}
     }
-}
+
