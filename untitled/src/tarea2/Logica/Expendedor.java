@@ -40,7 +40,7 @@ public class Expendedor {
         depSup8 = new Deposito<>(2);
         aux = new Deposito<>(100);
         depCompraExitosa = new Deposito<Producto>(1);
-        productosComprados = new Deposito<Producto>(8);
+
 
         for (int i = 0; i < 2; i++) {
             depCoca.addItem(new CocaCola());

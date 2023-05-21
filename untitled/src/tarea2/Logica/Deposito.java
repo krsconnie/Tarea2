@@ -1,4 +1,5 @@
 package tarea2.Logica;
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 /**
@@ -40,6 +41,13 @@ public class Deposito<T> {
             return ret;
         }
     }
+    public T getItem(int i) {
+        if (items.size() == 0) {
+            return null;
+        } else {
+            return items.get(i);
+        }
+    }
 
     /**
      * método addItem se encarga de agregar un elemento
@@ -65,4 +73,5 @@ public class Deposito<T> {
             T item = items.get(i);
         }
     }
+
 }

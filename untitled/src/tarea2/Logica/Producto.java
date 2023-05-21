@@ -18,7 +18,6 @@ public abstract class Producto {
     /**
      * Constructor de Producto
      *
-     * @param s único int
      *          el valor entero de s
      */
     public Producto() {

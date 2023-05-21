@@ -12,6 +12,11 @@ public abstract class Moneda implements Comparable {
      */
     public Moneda() {
     }
+    public Moneda getMoneda(Moneda moneda) {
+        Moneda aux = moneda;
+        moneda = null;
+        return aux;
+    }
     public abstract int getValor();
 
     /**

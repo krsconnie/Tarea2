@@ -10,9 +10,10 @@ import java.net.URL;
 
 public class PanelPrincipal extends JPanel implements MouseListener {
     private PanelComprador com;
+    private JPanel panelcom;
     private PanelExpendedor exp;
     private Expendedor máquina;
-    private Expendedor maquina;
+
     private JPanel principal = new JPanel() {
 
         @Override
@@ -25,7 +26,7 @@ public class PanelPrincipal extends JPanel implements MouseListener {
 
     public PanelPrincipal() {
         exp = new PanelExpendedor();
-        com = new PanelComprador(maquina);
+        com = new PanelComprador(panelcom);
 
         cargarImagenFondo();
 
