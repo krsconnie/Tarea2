@@ -11,6 +11,11 @@ public class PanelComprador extends JPanel {
 
     private final Expendedor maquina;
     private final JButton comprarButton;
+    private JPanel panel;
+    private JLabel moneda1;
+    private JLabel MONEDA2;
+    private int posX, posY;
+    private int posChaucheroX,getPosChaucheroY;
 
     public PanelComprador(Expendedor maquina) {
         this.maquina = maquina;

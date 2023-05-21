@@ -38,4 +38,7 @@ public abstract class Moneda implements Comparable {
         this.x = x;
         this.y = y;
     }
+    public String toString(){
+        return "VALOR MONEDA:"+ getValor() + "\n NUMERO DE SERIE" +getSerie();
+    }
 }
