@@ -11,16 +11,16 @@ public class DepProdWrapper<T> {
     protected Deposito<T> depProducto;
     private ArrayList<JLabel> depositoVisual;
 
-    public DepProdWrapper() {
+    public DepProdWrapper(int n) {
         depositoVisual = new ArrayList<>();
-        depProducto = new Deposito<>(4);
+        depProducto = new Deposito<>(n);
     }
 
     public void addItemLabel(JLabel ProductoLabel) {
         depositoVisual.add(ProductoLabel);
     }
 
-    public JLabel getProductoLabel() {
+    public JLabel getProductoLabel(int i) {
         if (depositoVisual.isEmpty()) {
             return null;
         } else {

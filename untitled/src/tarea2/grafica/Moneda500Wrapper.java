@@ -6,9 +6,10 @@ import tarea2.Logica.Moneda500;
 import javax.swing.*;
 import java.awt.*;
 
-public class Moneda500Wrapper extends JPanel {
+public class Moneda500Wrapper extends JButton {
 
     private Moneda500 moneda500;
+    public JButton monedaV500;
     private int x;
     private int y;
 
@@ -20,7 +21,7 @@ public class Moneda500Wrapper extends JPanel {
         return moneda500.getValor();
     }
 
-    public Moneda getSerie() {
+    public int getSerie() {
         return moneda500.getSerie();
     }
 
@@ -30,11 +31,8 @@ public class Moneda500Wrapper extends JPanel {
         moneda500.setXY(x, y);
     }
 
-    public void paint(Graphics g) {
-        g.setColor(new Color(255,148,8));
-        g.fillOval(this.x, this.y, 20, 20);
-        g.setColor(Color.black);
-        g.drawString(""+moneda500.getSerie(), this.x+3, this.y+15);
+    public void visualMon(JButton monedaV500){
+        monedaV500 = new JButton(new ImageIcon(this.getClass().getResource("Z.png")));
     }
 
     public int compareTo(Moneda otraMoneda) {

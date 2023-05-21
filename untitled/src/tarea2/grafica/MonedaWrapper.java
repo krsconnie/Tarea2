@@ -7,6 +7,7 @@ import java.awt.*;
 public class MonedaWrapper extends JPanel {
 
     private Moneda moneda;
+    private JButton monedaV;
 
     public MonedaWrapper(Moneda moneda) {
         this.moneda = moneda;
@@ -15,8 +16,11 @@ public class MonedaWrapper extends JPanel {
     public int getValor() {
         return moneda.getValor();
     }
+    public void visualMon(JButton monedaV){
+       monedaV= new JButton(new ImageIcon(this.getClass().getResource("Z.png")));
+    }
 
-    public Moneda getSerie() {
+    public int getSerie() {
         return moneda.getSerie();
     }
 

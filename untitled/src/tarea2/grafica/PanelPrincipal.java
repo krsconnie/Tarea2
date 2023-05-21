@@ -8,11 +8,10 @@ import java.awt.event.MouseListener;
 import java.net.URL;
 
 
-public class PanelPrincipal extends JPanel implements MouseListener {
+public class PanelPrincipal extends JPanel {
     private PanelComprador com;
-    private JPanel panelcom;
     private PanelExpendedor exp;
-    private Expendedor máquina;
+    private Ventana ventana;
 
     private JPanel principal = new JPanel() {
 
@@ -24,11 +23,9 @@ public class PanelPrincipal extends JPanel implements MouseListener {
     };
     private Image imagenFondo;
 
-    public PanelPrincipal() {
-        exp = new PanelExpendedor();
-        com = new PanelComprador(panelcom);
-
+    public PanelPrincipal(Ventana ventana) {
         cargarImagenFondo();
+        ventana.getContentPane().add(this);
 
     }
 
@@ -55,18 +52,4 @@ public class PanelPrincipal extends JPanel implements MouseListener {
         return principal;
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {}
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-    @Override
-    public void mouseExited(MouseEvent e) {}
 }

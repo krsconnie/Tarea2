@@ -23,8 +23,8 @@ public abstract class Moneda implements Comparable {
      * getSerie() no tiene parametros de entrada
      * retorna el valor protegido serie
      */
-    public Moneda getSerie() {
-        return this;
+    public int getSerie() {
+        return serie;
     }
     /**
      * Método compareTo para comparar

@@ -19,6 +19,9 @@ public class Deposito<T> {
         items = new ArrayList<>();
         this.capacidad = capacidad;
     }
+    public int getSize(){
+        return capacidad;
+    }
 
     /**
      * método getItem() no tiene parámetros,

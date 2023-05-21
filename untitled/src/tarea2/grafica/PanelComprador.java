@@ -20,15 +20,15 @@ public class PanelComprador extends JPanel {
     private int posXDepProductos, posYDepProductos;
 
     private DepProdWrapper depProductos;
-    private Deposito<Moneda100> depVuelto;
+    private DepMonWrapper depVuelto;
 
     public PanelComprador(JPanel panel) {
 
-        depProductos = new DepProdWrapper();
+        depProductos = new DepProdWrapper(4);
 
         this.panel = panel;
 
-        depVuelto = new Deposito<Moneda100>(12);
+        depVuelto = new DepMonWrapper(12);
         posChaucheroX = 0;
         posChaucheroY = 0;
 
@@ -42,6 +42,11 @@ public class PanelComprador extends JPanel {
 
         this.setBackground(Color.WHITE);
         this.setLayout(new BorderLayout());
+
+        visualizarComprador();
+        depositoProductosComprados();
+        depositoMonedasRetornadas();
+        colocarChauchero();
 
         comprarButton = new JButton("Comprar");
         comprarButton.addActionListener(new ActionListener() {
@@ -70,22 +75,12 @@ public class PanelComprador extends JPanel {
         posYDepProductos = y;
     }
 
-
-    public void addMoneda(Moneda moneda) {
-        this.moneda = moneda;
-    }
-
-    public void setProducto(Producto producto) {
-        depProductos.depProducto.addItem(producto);
-    }
-
-    public void setVuelto(Moneda100 moneda) {
-        depVuelto.addItem(moneda);
-    }
-
     //JLabel
     public void setProductoLabel(JLabel producto) {
         depProductos.addItemLabel(producto);
+    }
+    public void setVueltoLabel(JLabel moneda) {
+        depVuelto.addItemLabel(moneda);
     }
 
     public void comprarProducto() {
@@ -100,34 +95,44 @@ public class PanelComprador extends JPanel {
     }
 
     private void visualizarComprador() {
-        JLabel compradorVisible = new JLabel(new ImageIcon(this.getClass().getResource("pizza.png")));
+
+        JLabel compradorVisible = new JLabel(new ImageIcon("pizza.jpeg"));
         compradorVisible.setLayout(null);
         compradorVisible.setBounds(posX, posY, 350, 350);
         panel.add(compradorVisible);
     }
+    private void colocarChauchero() {
+        JLabel menuMonedas = new JLabel(new ImageIcon("chauchero.png"));
+        menuMonedas.setLayout(null);
+        chaucheroSetPos(0, 360);
+        colocarMonedas();
+        menuMonedas.setBounds(posChaucheroX, posChaucheroY, 350, 213);
+        panel.add(menuMonedas);
+    }
 
     private void colocarMonedas() {
 
-        // moneda100
-        JButton moneda100 = new JButton(new ImageIcon(this.getClass().getResource("Z.png")));
-        moneda100.setBounds(posChaucheroX + 72, posChaucheroY + 85, 35, 35);
-        moneda100.setEnabled(true);
-        moneda100.setMnemonic('1');
-        panel.add(moneda100);
+        Moneda100Wrapper moneda100V = new Moneda100Wrapper();
+        moneda100V.visualMon(moneda100V.monedaV100);
+        moneda100V.setBounds(posChaucheroX + 72, posChaucheroY + 85, 35, 35);
+        moneda100V.setEnabled(true);
+        moneda100V.setMnemonic('1');
+        panel.add(moneda100V);
 
-        // moneda500
-        JButton moneda500 = new JButton(new ImageIcon(this.getClass().getResource("Z.png")));
-        moneda500.setBounds(posChaucheroX + 112, posChaucheroY + 85, 35, 35);
-        moneda500.setEnabled(true);
-        moneda500.setMnemonic('2');
-        panel.add(moneda500);
+        Moneda500Wrapper moneda500V = new Moneda500Wrapper();
+        moneda500V.visualMon(moneda500V.monedaV500);
+        moneda500V.setBounds(posChaucheroX + 112, posChaucheroY + 85, 35, 35);
+        moneda500V.setEnabled(true);
+        moneda500V.setMnemonic('2');
+        panel.add(moneda500V);
 
-        // moneda1000
-        JButton moneda1000 = new JButton(new ImageIcon(this.getClass().getResource("Z.png")));
-        moneda1000.setBounds(posChaucheroX + 152, posChaucheroY + 85, 35, 35);
-        moneda1000.setEnabled(true);
-        moneda1000.setMnemonic('1');
-        panel.add(moneda1000);
+
+        Moneda1000Wrapper moneda1000V = new Moneda1000Wrapper();
+        moneda1000V.visualMon(moneda500V.monedaV500);
+        moneda1000V.setBounds(posChaucheroX + 152, posChaucheroY + 85, 35, 35);
+        moneda1000V.setEnabled(true);
+        moneda1000V.setMnemonic('1');
+        panel.add(moneda1000V);
 
     }
 
@@ -135,14 +140,14 @@ public class PanelComprador extends JPanel {
         String aux = "" + moneda.getClass();
         switch (aux) {
             case "class tarea2.Moneda100":
-                moneda1 = new JLabel(new ImageIcon(this.getClass().getResource("Z.png")));
+                moneda1 = new JLabel(new ImageIcon("Z.png"));
                 panel.add(moneda2);
                 break;
             case "class tarea2.Moneda500":
-                moneda2 = new JLabel(new ImageIcon(this.getClass().getResource("Z.png")));
+                moneda2 = new JLabel(new ImageIcon("Z.png"));
                 break;
             case "class tarea2.Moneda1000":
-                moneda2 = new JLabel(new ImageIcon(this.getClass().getResource("Z.png")));
+                moneda2 = new JLabel(new ImageIcon("Z.png"));
                 break;
             default:
                 return;
@@ -151,4 +156,56 @@ public class PanelComprador extends JPanel {
             panel.remove(moneda1);
         }
     }
+    public void ingresarMoneda() {
+        if (moneda1 != null) {
+            panel.remove(moneda1);
+            panel.repaint();
+        }
+    }
+    public void mostrarVuelto() {
+        JLabel auxLabel;
+        Boolean flag = true;
+        int aux = 0;
+        for (int i = 0; i < depVuelto.depMoneda.getSize(); i++) {
+            auxLabel = depVuelto.seeMonedaLabel(i);
+            if (i < 12) {
+                auxLabel.setBounds(posChaucheroX + 10, posChaucheroY + 350 - 30 * i, 20, 20);
+            } else if (i < 24) {
+                auxLabel.setBounds(posChaucheroX + 40, posChaucheroY + 350 - 30 * aux, 20, 20);
+                aux++;
+            } else {
+                flag = false;
+            }
+            if (flag) {
+                panel.add(auxLabel);
+                panel.setComponentZOrder(auxLabel, 0);
+                panel.repaint();
+            }
+        }
+    }
+    public void mostrarProductos() {
+        JLabel auxLabel;
+        for (int i = 0; i < depProductos.depProducto.getSize(); i++) {
+            if (i < 5) {
+                auxLabel = depProductos.seeProductoLabel(i);
+                auxLabel.setBounds(posXDepProductos + 20, posYDepProductos + 310 - 70 * i, 30, 60);  // serie mayor a menor
+                panel.add(auxLabel);
+                panel.setComponentZOrder(auxLabel, 0);
+                panel.repaint();
+            }
+        }
+    }
+    public void depositoProductosComprados() {
+        JLabel depositoBebidasLabel = new JLabel(new ImageIcon("dep.png"));
+        depProductoSetPos(345, 20);
+        depositoBebidasLabel.setBounds(posXDepProductos , posYDepProductos , 70, 400);
+        panel.add(depositoBebidasLabel);
+    }
+    public void depositoMonedasRetornadas() {
+        JLabel depositoMonedasLabel = new JLabel(new ImageIcon("/recursos/depositoBebida.png"));
+        chaucheroSetPos(425, 20);
+        depositoMonedasLabel.setBounds(posChaucheroX , posChaucheroY, 70, 400);
+        panel.add(depositoMonedasLabel);
+    }
+
 }

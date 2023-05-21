@@ -11,7 +11,7 @@ public class Ventana extends JFrame {
     /**Constructor de Ventana*/
     public Ventana() {
         crearVentana();
-        panelPrincipal = new PanelPrincipal();
+        panelPrincipal = new PanelPrincipal(this);
         getContentPane().add(panelPrincipal.getPanel());
 
     }
