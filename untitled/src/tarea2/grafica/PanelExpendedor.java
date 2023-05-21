@@ -4,6 +4,7 @@ import tarea2.Logica.*;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.Event.*;
 
 /** Un expendedor que tendrá depósitos para cada producto y para el vuelto, cuenta con la interfaz gráfica */
 public class PanelExpendedor extends JPanel {
@@ -13,6 +14,7 @@ public class PanelExpendedor extends JPanel {
     public static final int SNICKER = 3;
     public static final int SUPER8 = 4;
 
+    private int posX, posY;
     private final int precioB = 600;
     private final int precioD = 500;
     private Deposito<CocaCola> depCoca;
@@ -150,4 +152,44 @@ public class PanelExpendedor extends JPanel {
         // Dibujar el depósito de compra exitosa (con un producto)
         depCompraExitosa.dibujar(g, 150, 460);
     }
+
+    //Botones bebidas
+    JButton botonCocacola = new JButton(new ImageIcon(this.getClass().getResource("/recursos/botonCocacola.jpg")));
+    int botonCocacolaX = posX + 60;
+    int botonCocacolaY = posY;
+
+    botonCocacola.setBounds(botonCocacolaX, botonCocacolaY, 60, 30);
+    botonCocacola.setEnabled(true);
+    botonCocacola.setBackground(Color, black);
+    panelPrincipal.add(botonCocacola);
+
+    JButton botonSprite = new JButton(new ImageIcon(this.getClass().getResource("/recursos/botonSprite.jpg")));
+    int botonSpriteX = posX;
+    int botonSpriteY = posY;
+
+    botonSprite.setBounds(botonSpriteX, botonSpriteY, 60, 30);
+    botonSprite.setEnabled(true);
+    botonSprite.setBackground(Color.black);
+    panelPrincipal.add(botonSprite);
+
+    //Botones dulces
+    JButton botonSnickers = new JButton(new ImageIcon(this.getClass().getResource("/recursos/botonSnickers.jpg")));
+    int botonSnickersX = posX;
+    int botonSnickersY = posY;
+
+    botonSnickers.setBounds(botonSnickersX, botonSnickersY, 60, 30);
+    botonSnickers.setEnabled(true);
+    botonSnickers.setBackground(Color.black);
+    panelPrincipal.add(botonSnickers);
+
+    JButton botonSuper8 = new JButton(new ImageIcon(this.getClass().getResource("/recursos/botonSuper8.jpg")));
+    int botonSuper8X = posX;
+    int botonSuper8Y = posY;
+
+    botonSuper8.setBounds(botonSuper8X, botonSuper8Y, 60, 30);
+    botonSuper8.setEnabled(true);
+    botonSuper8.setBackground(Color.black);
+    panelPrincipal.add(botonSnickers);
+
+
 }
