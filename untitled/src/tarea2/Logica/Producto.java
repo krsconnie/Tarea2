@@ -17,28 +17,21 @@ public abstract class Producto {
 
     /**
      * Constructor de Producto
-     *
-     *          el valor entero de s
      */
     public Producto() {
         this.serie = ((int) (Math.random() * 100));
         ;
     }
-
+    /** Metodo consumir. al que se le hará override en sus subclases*/
     public abstract String consumir();
 
     /**
-     * getSerie no tiene parametro de entrada.
-     *
-     * @return el valor entero de s
+     * Método getSerie  devuelve la serie unica de Producto
+     * @return serie
      */
     public int getSerie() {
         int s = serie;
         return serie;
     }
 
-    public void setXY(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
 }

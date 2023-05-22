@@ -21,9 +21,15 @@ public class Moneda1000 extends Moneda {
         int valor = super.valor;
         return valor;
     }
-
+    /**Método que deriva de la interfaz comparable*/
     @Override
     public int compareTo() {
         return 0;
+    }
+
+    /**Método toString devuelve
+     * el valor de la moneda y el numero*/
+    public String toString(){
+        return "VALOR MONEDA:"+ getValor() + "\n NUMERO DE SERIE" +getSerie();
     }
 }

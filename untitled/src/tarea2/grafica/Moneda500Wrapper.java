@@ -13,29 +13,24 @@ public class Moneda500Wrapper extends JButton {
     private int x;
     private int y;
 
+
+    /**Constructor crea un objeto de moneda500, para poder usar sus métodos*/
     public Moneda500Wrapper() {
         moneda500 = new Moneda500();
     }
 
-    public int getValor() {
-        return moneda500.getValor();
-    }
 
-    public int getSerie() {
-        return moneda500.getSerie();
-    }
-
+    /**Método setXY para delimitar las coordenadas del objeto
+     * @param x
+     * @param y*/
     public void setXY(int x, int y) {
         this.x = x;
         this.y = y;
-        moneda500.setXY(x, y);
-    }
 
+    }
+    /**Método visualMon recibe un JButton y le agrega una imagen a este
+     * @param monedaV500*/
     public void visualMon(JButton monedaV500){
         monedaV500 = new JButton(new ImageIcon(this.getClass().getResource("Z.png")));
-    }
-
-    public int compareTo(Moneda otraMoneda) {
-        return moneda500.compareTo(otraMoneda);
     }
 }

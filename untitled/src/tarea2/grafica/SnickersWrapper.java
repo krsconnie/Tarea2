@@ -5,30 +5,27 @@ import tarea2.Logica.Snickers;
 import javax.swing.*;
 import java.awt.*;
 
+/**Clase SnickersWrapper funciona como envoltorio de la clase snickers que contiene la lógica
+ * el wrapper especifica los métodos visuales*/
 public class SnickersWrapper extends JPanel {
 
     private Snickers snickers;
     private int x;
     private int y;
-
+    /**Constructor. crea un objeto de la clase Snicker*/
     public SnickersWrapper() {
         snickers = new Snickers();
     }
 
-    public String consumir() {
-        return snickers.consumir();
-    }
-
-    public int getSerie() {
-        return snickers.getSerie();
-    }
-
+    /**Método setXY para delimitar las coordenadas del objeto
+     * @param x
+     * @param y*/
     public void setXY(int x, int y) {
         this.x = x;
         this.y = y;
-        snickers.setXY(x, y);
-    }
 
+    }
+    /**Método paint que dibuja al objeto*/
     @Override
     public void paint(Graphics g) {
         g.setColor(Color.white);

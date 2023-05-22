@@ -8,18 +8,20 @@ import java.awt.*;
  */
 public abstract class Dulce extends Producto {
     protected int serie;
-    protected int x,y;
+
+    /**Constructor de Dulce*/
     public Dulce() {
         super();
     }
+
+    /** Metodo consumir. al que se le hará override en sus subclases*/
     public abstract String consumir();
+
+    /**Método getSerie devuelve la serie unica de dulce
+     * @return serie */
     public int getSerie() {
         int s = serie;
         return serie;
     }
-    public void setXY(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
-    public abstract void paint(Graphics g);
+
 }

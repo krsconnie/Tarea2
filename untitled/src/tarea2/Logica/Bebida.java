@@ -18,13 +18,13 @@ public abstract class Bebida extends Producto {
     }
 
     public abstract String consumir();
+
+    /**
+     * Método getSerie  devuelve la serie unica de Bebida
+     * @return serie
+     */
     public int getSerie() {
         int s = serie;
         return serie;
     }
-    public void setXY(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
-    public abstract void paint(Graphics g);
 }

@@ -39,10 +39,8 @@ public abstract class Moneda implements Comparable {
             return 0;
         }
     }
-    public void setXY(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
+    /**Método toString devuelve
+     * el valor de la moneda y el numero*/
     public String toString(){
         return "VALOR MONEDA:"+ getValor() + "\n NUMERO DE SERIE" +getSerie();
     }

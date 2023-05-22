@@ -11,15 +11,19 @@ import java.awt.*;
          *Constructor para Snickers
          */
         public Snickers(){super();}
-        @Override
-        public void paint(Graphics g) {
-
-        }
         /**
          *Se sobreescribe el metodo consumir()
          *@return "Snicker"
          */
         @Override
         public String consumir() {return "Snicker";}
+        /**
+         * Método getSerie  devuelve la serie unica de Snicker
+         * @return serie
+         */
+        public int getSerie() {
+            int s = serie;
+            return serie;
+        }
     }
 

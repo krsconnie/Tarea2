@@ -5,30 +5,28 @@ import tarea2.Logica.CocaCola;
 import javax.swing.*;
 import java.awt.*;
 
+/**Clase CocaColaWrapper funciona como envoltorio de la clase cocacola que contiene la lógica
+ * el wrapper especifica los métodos visuales*/
 public class CocaColaWrapper extends JPanel {
 
     private CocaCola cocacola;
     private int x;
     private int y;
 
+    /**Constructor. crea un objeto de la clase CocaCola*/
     public CocaColaWrapper() {
         cocacola = new CocaCola();
     }
 
-    public String consumir() {
-        return cocacola.consumir();
-    }
-
-    public int getSerie() {
-        return cocacola.getSerie();
-    }
-
+    /**Método setXY para delimitar las coordenadas del objeto
+     * @param x
+     * @param y*/
     public void setXY(int x, int y) {
         this.x = x;
         this.y = y;
-        cocacola.setXY(x, y);
     }
 
+    /**Método paint que dibuja al objeto*/
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

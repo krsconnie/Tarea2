@@ -11,14 +11,18 @@ public class Super8 extends Dulce {
      *Constructor para los Super8
      */
     public Super8(){super();}
-    @Override
-    public void paint(Graphics g) {
 
-    }
     /**
      *Se sobreescribe el metodo consumir()
      *@return String "Super8"
      */
-
     public String consumir(){return "Super8";}
+    /**
+     * Método getSerie  devuelve la serie unica de Super8
+     * @return serie
+     */
+    public int getSerie() {
+        int s = serie;
+        return serie;
+    }
 }

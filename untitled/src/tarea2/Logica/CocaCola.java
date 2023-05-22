@@ -23,10 +23,13 @@ public class CocaCola extends Bebida {
     public String consumir() {
         return "cocacola";
     }
-
-    @Override
-    public void paint(Graphics g) {
-
+    /**
+     * Método getSerie  devuelve la serie unica de CocaCola
+     * @return serie
+     */
+    public int getSerie() {
+        int s = serie;
+        return serie;
     }
 
 }

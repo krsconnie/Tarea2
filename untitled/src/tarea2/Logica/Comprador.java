@@ -12,10 +12,16 @@ public class Comprador {
     private int cualProducto;
     private Expendedor maquina;
 
+    /**Constructor comprador*/
+
     public Comprador() {
         vuelto = 0;
     }
-
+    /**Método comprarProducto
+     * @param m
+     * @param cualProducto
+     * @param maquina
+     */
     public void comprarProducto(Moneda m, int cualProducto, Expendedor maquina) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         this.m = m;
         this.cualProducto = cualProducto;
@@ -53,19 +59,21 @@ public class Comprador {
     public String queConsumiste() {
         return consumir;
     }
+
+    /**método setCualProducto devuelve que producto se escogio*/
     public void setCualProducto(int cualProducto) {
         this.cualProducto = cualProducto;
     }
-
+    /**método setMoneda devuelve la moneda*/
     public void setMoneda(Moneda m){
         this.m = m;
     }
 
-    public Moneda getM() {
-        return m;
-    }
+    //public Moneda getM() {
+    //    return m;
+    //}
 
-    public int getCualProducto() {
-        return cualProducto;
-    }
+    //public int getCualProducto() {
+     //   return cualProducto;
+    //}
 }

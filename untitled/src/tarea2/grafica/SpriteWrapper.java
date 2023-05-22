@@ -5,30 +5,31 @@ import tarea2.Logica.Sprite;
 import javax.swing.*;
 import java.awt.*;
 
+/**Clase SpriteWrapper funciona como envoltorio de la clase sprite que contiene la lógica
+ * el wrapper especifica los métodos visuales*/
+
 public class SpriteWrapper extends JPanel {
 
     private Sprite sprite;
     private int x;
     private int y;
 
+    /**Constructor. crea un objeto de la clase Sprite*/
     public SpriteWrapper() {
         sprite = new Sprite();
     }
 
-    public String consumir() {
-        return sprite.consumir();
-    }
 
-    public int getSerie() {
-        return sprite.getSerie();
-    }
-
+    /**Método setXY para delimitar las coordenadas del objeto
+     * @param x
+     * @param y*/
     public void setXY(int x, int y) {
         this.x = x;
         this.y = y;
-        sprite.setXY(x, y);
+
     }
 
+    /**Método paint que dibuja al objeto*/
     @Override
     public void paint(Graphics g) {
         g.setColor(Color.green);

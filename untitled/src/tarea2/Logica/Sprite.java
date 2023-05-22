@@ -23,8 +23,12 @@ public class Sprite extends Bebida {
     public String consumir() {
         return "sprite";
     }
-    @Override
-    public void paint(Graphics g) {
-
+    /**
+     * Método getSerie  devuelve la serie unica de Sprite
+     * @return serie
+     */
+    public int getSerie() {
+        int s = serie;
+        return serie;
     }
 }
