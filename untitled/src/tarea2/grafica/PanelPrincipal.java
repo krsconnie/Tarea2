@@ -1,27 +1,23 @@
 package tarea2.grafica;
 
-import tarea2.Logica.Expendedor;
-
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.net.URL;
+import java.awt.Dimension;
+import java.awt.Image;
 
 public class PanelPrincipal extends JPanel {
+    //* CONSTRUCTOR
+    public PanelPrincipal() {
+        super(null); // this.setLayout(null);
 
-    private Ventana ventana;
-    JPanel principal = new JPanel();
-    public PanelPrincipal(Ventana ventana) {
-        this.ventana = ventana;
+        // Fondo
+        System.out.println("PATH: " + getClass().getResource("/Resources/fondo.png"));
 
-        JLabel wallpaper = new JLabel(new ImageIcon(this.getClass().getResource("/recursos/fondo.png")));
-        wallpaper.setLayout(null);
+        // JLabel wallpaper = new JLabel(new ImageIcon(getClass().getResource("/Resources/fondo.png").getImage().getScaledInstance(1200, 720, Image.SCALE_SMOOTH)));
+        JLabel wallpaper = new JLabel(new ImageIcon(getClass().getResource("/Resources/fondo.png")));
         wallpaper.setBounds(0, 0, 1200, 720);
-        add(wallpaper);
-    }
 
-    public JPanel getPanel() {
-        return principal;
+        add(wallpaper);
+
+        this.setPreferredSize(new Dimension(wallpaper.getWidth(), wallpaper.getHeight()));
     }
 }
