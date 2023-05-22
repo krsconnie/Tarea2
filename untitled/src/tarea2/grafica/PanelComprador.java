@@ -140,14 +140,14 @@ public class PanelComprador extends JPanel {
         String aux = "" + moneda.getClass();
         switch (aux) {
             case "class tarea2.Moneda100":
-                moneda1 = new JLabel(new ImageIcon("Z.png"));
+                moneda1 = new JLabel(new ImageIcon("/recursos/moneda100.png"));
                 panel.add(moneda2);
                 break;
             case "class tarea2.Moneda500":
-                moneda2 = new JLabel(new ImageIcon("Z.png"));
+                moneda2 = new JLabel(new ImageIcon("/recursos/moneda500.png"));
                 break;
             case "class tarea2.Moneda1000":
-                moneda2 = new JLabel(new ImageIcon("Z.png"));
+                moneda2 = new JLabel(new ImageIcon("/recursos/moneda1000.png"));
                 break;
             default:
                 return;

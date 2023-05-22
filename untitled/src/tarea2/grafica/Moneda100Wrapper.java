@@ -31,7 +31,7 @@ public class Moneda100Wrapper extends JButton {
         moneda100.setXY(x, y);
     }
     public void visualMon(JButton monedaV100){
-        monedaV100 = new JButton(new ImageIcon(this.getClass().getResource("Z.png")));
+        monedaV100 = new JButton(new ImageIcon(this.getClass().getResource("/recursos/moneda100.png")));
     }
     public int compareTo(Moneda otraMoneda) {
         return moneda100.compareTo(otraMoneda);

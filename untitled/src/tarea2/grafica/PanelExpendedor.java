@@ -14,6 +14,7 @@ public class PanelExpendedor extends JPanel {
     public static final int SNICKER = 3;
     public static final int SUPER8 = 4;
 
+    private JPanel panelPrincipal;
     private int posX, posY;
     private final int precioB = 600;
     private final int precioD = 500;
@@ -153,6 +154,19 @@ public class PanelExpendedor extends JPanel {
         depCompraExitosa.dibujar(g, 150, 460);
     }
 
+    public void graficaExpendedor(JPanel panelPrincipal){
+
+        armarExpendedor();
+    }
+    
+    private void armarExpendedor(){
+        
+        colocarBotones();
+
+    }
+
+    private void colocarBotones(){
+
     //Botones bebidas
     JButton botonCocacola = new JButton(new ImageIcon(this.getClass().getResource("/recursos/botonCocacola.jpg")));
     int botonCocacolaX = posX + 60;
@@ -160,7 +174,7 @@ public class PanelExpendedor extends JPanel {
 
     botonCocacola.setBounds(botonCocacolaX, botonCocacolaY, 60, 30);
     botonCocacola.setEnabled(true);
-    botonCocacola.setBackground(Color, black);
+    botonCocacola.setBackground(Color.black);
     panelPrincipal.add(botonCocacola);
 
     JButton botonSprite = new JButton(new ImageIcon(this.getClass().getResource("/recursos/botonSprite.jpg")));
@@ -190,6 +204,8 @@ public class PanelExpendedor extends JPanel {
     botonSuper8.setEnabled(true);
     botonSuper8.setBackground(Color.black);
     panelPrincipal.add(botonSnickers);
+    
+    }
 
 
 }
