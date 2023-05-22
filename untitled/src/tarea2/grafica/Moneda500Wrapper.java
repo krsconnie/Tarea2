@@ -31,6 +31,6 @@ public class Moneda500Wrapper extends JButton {
     /**Método visualMon recibe un JButton y le agrega una imagen a este
      * @param monedaV500*/
     public void visualMon(JButton monedaV500){
-        monedaV500 = new JButton(new ImageIcon(this.getClass().getResource("Z.png")));
+        monedaV500 = new JButton(new ImageIcon(this.getClass().getResource("/recursos/moneda500.png")));
     }
 }

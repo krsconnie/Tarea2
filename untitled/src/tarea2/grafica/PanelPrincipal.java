@@ -1,4 +1,5 @@
 package tarea2.grafica;
+
 import tarea2.Logica.Expendedor;
 
 import javax.swing.*;
@@ -7,49 +8,20 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.URL;
 
-
 public class PanelPrincipal extends JPanel {
-    private PanelComprador com;
-    private PanelExpendedor exp;
+
     private Ventana ventana;
-
-    private JPanel principal = new JPanel() {
-
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            pintarFondo(g);
-        }
-    };
-    private Image imagenFondo;
-
+    JPanel principal = new JPanel();
     public PanelPrincipal(Ventana ventana) {
-        cargarImagenFondo();
-        ventana.getContentPane().add(this);
+        this.ventana = ventana;
 
-    }
-
-    private void cargarImagenFondo() {
-        try {
-            URL imageURL = getClass().getResource("fondo.png");
-            if (imageURL != null) {
-                imagenFondo = new ImageIcon(imageURL).getImage();
-            } else {
-                System.err.println("No se pudo cargar la imagen de fondo.");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void pintarFondo(Graphics g) {
-        if (imagenFondo != null) {
-            g.drawImage(imagenFondo, 0, 0, principal.getWidth(), principal.getHeight(), principal);
-        }
+        JLabel wallpaper = new JLabel(new ImageIcon(this.getClass().getResource("/recursos/fondo.png")));
+        wallpaper.setLayout(null);
+        wallpaper.setBounds(0, 0, 1200, 720);
+        add(wallpaper);
     }
 
     public JPanel getPanel() {
         return principal;
     }
-
 }
